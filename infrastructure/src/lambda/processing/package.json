@@ -1,0 +1,20 @@
+{
+  "name": "processing-lambda",
+  "version": "1.0.0",
+  "description": "Data ingestion processing Lambda function",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.0.0",
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.92",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.0.0"
+  }
+}

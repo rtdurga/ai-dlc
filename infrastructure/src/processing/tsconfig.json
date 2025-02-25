@@ -7,7 +7,7 @@
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "noImplicitThis": true,
+    "noImplicitThis": false,
     "alwaysStrict": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
@@ -17,8 +17,26 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
-    "typeRoots": ["./node_modules/@types"],
-    "outDir": "build"
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ],
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"]
+    }
   },
-  "exclude": ["node_modules", "cdk.out", "dist", "build"]
+  "include": [
+    "*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test"
+  ]
 }
