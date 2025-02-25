@@ -1,0 +1,33 @@
+{
+  "name": "ai-dlc-infrastructure",
+  "version": "0.1.0",
+  "description": "AWS CDK Infrastructure for AI/DLC Project",
+  "main": "bin/infrastructure.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "deploy": "cdk deploy",
+    "diff": "cdk diff",
+    "synth": "cdk synth"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.0",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "aws-cdk": "^2.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "typescript": "~5.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0",
+    "aws-cdk-lib": "^2.0.0",
+    "aws-lambda": "^1.0.7",
+    "constructs": "^10.0.0",
+    "source-map-support": "^0.5.21"
+  }
+}
