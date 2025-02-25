@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: report-service
+  datasource:
+    url: jdbc:h2:mem:reportdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  quartz:
+    job-store-type: memory
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: ReportScheduler
+          threadPool:
+            threadCount: 3
+
+server:
+  port: 8082
+  servlet:
+    context-path: /api/v1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+reporting:
+  template-path: /reports
+  output-path: /reports/generated
+  default-format: pdf
+
+logging:
+  level:
+    com.geocell.report: DEBUG
+    org.springframework: INFO
+    org.quartz: INFO
+
+# Scheduled Report Configuration
+scheduled-reports:
+  api-usage:
+    cron: 0 0 1 * * ? # Run daily at 1 AM
+    enabled: true
+  performance-metrics:
+    cron: 0 30 1 * * ? # Run daily at 1:30 AM
+    enabled: true
